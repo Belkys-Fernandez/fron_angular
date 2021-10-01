@@ -1,0 +1,20 @@
+[ 
+    {
+        "nombre": "Tablero",
+        "redirect": "/tablero"
+    },
+    {
+        
+        "nombre": "Usuario",
+        "redirect": "/tablero/usuario"
+
+    },
+    {
+        
+        "nombre": "Reporte",
+        "redirect": "/tablero/reportes"
+
+    }
+    
+
+]
