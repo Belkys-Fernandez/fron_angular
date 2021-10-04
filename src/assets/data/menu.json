@@ -1,6 +1,6 @@
 [ 
     {
-        "nombre": "Tablero",
+        "nombre": "Nutricion",
         "redirect": "/tablero"
     },
     {
@@ -11,7 +11,7 @@
     },
     {
         
-        "nombre": "Reporte",
+        "nombre": "Producto",
         "redirect": "/tablero/reportes"
 
     }
