@@ -2,8 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 
 import { producto } from 'src/app/interfaces/producto';
+import { ProductoService } from 'src/app/service/producto.service';
 
  
 
@@ -27,17 +29,25 @@ const listproducto: producto[] = [
   styleUrls: ['./reportes.component.css']
 })
 export class ReportesComponent implements OnInit {
+  listProducto: producto[]=[];
+
   displayedColumns: string[] = ['nombre', 'categoria', 'precio', 'presentacion','acciones'];
-  dataSource = new MatTableDataSource(listproducto);
+  dataSource!: MatTableDataSource<any> ;
+
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor() { }
+  constructor( private _productoService: ProductoService) { }
 
   ngOnInit(): void {
+    this.cargarproducto();
 
+  }
+  cargarproducto(){
+    this.listProducto= this._productoService.getProducto();
+    this.dataSource = new MatTableDataSource( this.listProducto);
   }
 
   ngAfterViewInit() {
