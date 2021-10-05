@@ -26,6 +26,10 @@ getProducto(){
   return this.listproducto.slice();
 }
 
+eliminarProducto(index:number){
+  this.listproducto.splice(index ,1);
+}
+
 }
 
 
