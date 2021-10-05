@@ -1,0 +1,60 @@
+<div class="container">
+    <mat-toolbar>
+        <span>Cargar  Producto</span>
+      </mat-toolbar>
+      <mat-card style="margin-top: 10px;">
+        <form >
+            <mat-grid-list cols="4" rowHeight="70px">
+                <mat-grid-tile  [colspan]="1" [rowspan]="1" >
+                    <mat-form-field  class="ancho">
+                        <mat-label>Nombre del Producto</mat-label>
+                        <input matInput>
+                      </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile  [colspan]="3" [rowspan]="5">
+             imag
+             </mat-grid-tile>
+
+             <mat-grid-tile  [colspan]="1" [rowspan]="1">
+                <mat-form-field  class="ancho">
+                    <mat-label>Categoria</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+             </mat-grid-tile>
+
+             <mat-grid-tile  [colspan]="1" [rowspan]="1" >
+                <mat-form-field  class="ancho">
+                    <mat-label>Precio</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+             </mat-grid-tile>
+
+             <mat-grid-tile  [colspan]="1" [rowspan]="1">
+               
+               Presentacion
+             </mat-grid-tile>
+
+             <mat-grid-tile  [colspan]="1" [rowspan]="1">
+                Volver  y ACEPTAR
+             </mat-grid-tile>
+
+         
+
+                
+
+                <mat-grid-tile
+                    *ngFor="let tile of tiles"
+                    [colspan]="tile.cols"
+                    [rowspan]="tile.rows"
+                    [style.background]="tile.color">
+                  {{tile.text}}
+                </mat-grid-tile>
+              </mat-grid-list>
+
+
+        </form>
+        
+        </mat-card>
+
+</div>

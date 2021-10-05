@@ -9,6 +9,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { TableroComponent } from './tablero.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
+import { CrearProductoComponent } from './reportes/crear-producto/crear-producto.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.co
    InicioComponent,
    MenuComponent,
     UsuarioComponent, 
-    ReportesComponent, CrearUsuarioComponent
+    ReportesComponent, CrearUsuarioComponent, CrearProductoComponent
   ],
   imports: [
     CommonModule,
