@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { producto } from '../interfaces/producto';
+import { Usuario } from '../interfaces/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,9 @@ getProducto(){
 
 eliminarProducto(index:number){
   this.listproducto.splice(index ,1);
+}
+agreggarProducto(producto:producto){
+  this.listproducto.unshift(producto);
 }
 
 }
