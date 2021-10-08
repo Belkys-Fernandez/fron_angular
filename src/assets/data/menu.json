@@ -5,7 +5,7 @@
     },
     {
         
-        "nombre": "Usuario",
+        "nombre": "Integrante",
         "redirect": "/tablero/usuario"
 
     },
