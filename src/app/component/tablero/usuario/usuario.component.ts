@@ -5,7 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { Usuario } from 'src/app/interfaces/usuario';
-import { UsuarioService } from 'src/app/service/usuario.service';
+import { UsuarioService } from 'src/app/service/usuarios.service';
 
 
 

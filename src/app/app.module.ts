@@ -9,6 +9,7 @@ import { CompartirModuloModule } from './component/compartModulos/compartir-modu
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -27,10 +28,11 @@ import { LoginComponent } from './component/login/login.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CompartirModuloModule
+    CompartirModuloModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
