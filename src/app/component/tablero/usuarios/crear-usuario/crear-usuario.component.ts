@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuario';
-import { UsuarioService } from 'src/app/service/usuario.service';
+import { UsuarioService } from 'src/app/service/usuarios.service';
+
 
 @Component({
   selector: 'app-crear-usuario',
@@ -11,11 +12,11 @@ import { UsuarioService } from 'src/app/service/usuario.service';
   styleUrls: ['./crear-usuario.component.css']
 })
 export class CrearUsuarioComponent implements OnInit {
- sexo:any[]=['Masculino', 'Femenino']
+ sexo:any[]=['Cliente Admirable', 'Empresario']
  
  form: FormGroup;
 
-  constructor(private fb:FormBuilder, private _usuarioService: UsuarioService,
+  constructor(private fb:FormBuilder, private _usuarioService:UsuarioService,
      private router:Router, private _snackBar: MatSnackBar) {
 
     this.form= this.fb.group({

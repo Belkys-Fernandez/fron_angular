@@ -4,7 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { producto } from 'src/app/interfaces/producto';
 import { Usuario } from 'src/app/interfaces/usuario';
-import { ProductoService } from 'src/app/service/producto.service';
+import { ProductoService } from 'src/app/service/productos.service';
+
 
 @Component({
   selector: 'app-crear-producto',
@@ -15,7 +16,7 @@ export class CrearProductoComponent implements OnInit {
   presentacion:any[]=['Botella', 'Caja'] 
   form:FormGroup;
 
-  constructor( private fb: FormBuilder, private _productoService:ProductoService,private router:Router,private _snackBar: MatSnackBar) { 
+  constructor( private fb: FormBuilder, private _productoService:ProductoService, private router:Router,private _snackBar: MatSnackBar) { 
 this.form =this.fb.group({
   nombre:['',Validators.required],
   categoria:['',Validators.required],

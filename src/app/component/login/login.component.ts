@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
-import { TimeoutError } from 'rxjs';
 
 
 @Component({
@@ -29,7 +28,7 @@ export class LoginComponent implements OnInit {
     const usuario=this.form.value.usuario;
     const passwork=this.form.value.passwork ;
   
-    if (usuario=='belkys' && passwork== 'perez') {
+    if (usuario=='belkys' && passwork== '123') {
       this.fakecarga();
     
 

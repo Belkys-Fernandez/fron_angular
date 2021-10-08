@@ -6,7 +6,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 
 import { producto } from 'src/app/interfaces/producto';
-import { ProductoService } from 'src/app/service/producto.service';
+import { ProductoService } from 'src/app/service/productos.service';
+
 
  
 
@@ -29,7 +30,7 @@ export class ReportesComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
 
-  constructor( private _productoService: ProductoService ,private _snackBar: MatSnackBar) { }
+  constructor( private _productoService:ProductoService ,private _snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.cargarproducto();
