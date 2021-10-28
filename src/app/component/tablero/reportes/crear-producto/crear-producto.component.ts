@@ -16,7 +16,7 @@ export class CrearProductoComponent implements OnInit {
   presentacion:any[]=['Botella', 'Caja'] 
   form:FormGroup;
 
-  constructor( private fb: FormBuilder, private _productoService:ProductoService, private router:Router,private _snackBar: MatSnackBar) { 
+  constructor( private fb: FormBuilder, private api:ProductoService, private _productoService:ProductoService, private router:Router,private _snackBar: MatSnackBar) { 
 this.form =this.fb.group({
   nombre:['',Validators.required],
   categoria:['',Validators.required],

@@ -2,7 +2,7 @@
      <div class="Login">
       <mat-spinner  *ngIf= "!cargaSpinner" class="spiner" diameter ="50"></mat-spinner>
 
-         <form  *ngIf= "cargaSpinner" [formGroup]="form" (ngSubmit)="ingresar()" > 
+         <form  *ngIf= "cargaSpinner" [formGroup]="form" (ngSubmit)="registrar()" > 
             <img src="./assets/img/usuario.png " width="25%">
             <h1>Login</h1>
             <mat-form-field  class="ancho" appearance="fill">
