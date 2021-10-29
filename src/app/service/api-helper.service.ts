@@ -25,7 +25,7 @@ export class ApiHelperService {
   }
 
   registrar(usuario:Usuario): Observable<Usuario[]>{
-    return <Observable<Usuario[]>>(this.http.post( this.Api + 'Usuario/crear',JSON.stringify(usuario)));
+    return <Observable<Usuario[]>>(this.http.post( this.Api + 'listaUsuario/crear',JSON.stringify(usuario)));
   }
 
   traerUsuarios(id:number, token:string){

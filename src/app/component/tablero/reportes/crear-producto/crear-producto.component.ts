@@ -37,7 +37,7 @@ export class CrearProductoComponent implements OnInit {
     prod.push(this.producto);
     localStorage.setItem("carrito",JSON.stringify(prod));
     console.log(prod);
-    this.api.agreggarProducto(prod);
+    this.api.agreggarProducto(this.producto);
     this.router.navigate(['/tablero/reportes']);
 
     this._snackBar.open('El producto fue agregado con exito','',  {

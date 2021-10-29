@@ -28,13 +28,14 @@ export class ProductoService {
   private producto!:producto;
 
   registrar(productos:producto): Observable<producto[]>{
-    return <Observable<producto[]>>(this.http.post( this.Api + 'productos/crear',JSON.stringify(productos)));
+    return <Observable<producto[]>>(this.http.post( this.Api + 'listaProductos/crear',JSON.stringify(productos)));
   }
   
   traerproductoss(id:number, token:string){
     
     return <Observable<producto[]>>(this.http.post( this.Api + 'productos/traerTodos/'+id,JSON.stringify({token:token})));
   }
+  
 
 
   getProducto(){
