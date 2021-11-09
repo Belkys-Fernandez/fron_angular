@@ -29,6 +29,8 @@ export class ApiHelperService {
   }
 
   traerUsuarios(id:number, token:string){
+
+    
     
     return <Observable<Usuario[]>>(this.http.post( this.Api + 'Usuario/traerTodos/'+id,JSON.stringify({token:token})));
   }
