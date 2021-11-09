@@ -7,13 +7,18 @@ import { Usuario } from '../interfaces/usuario';
 export class UsuarioService {
   listUsuario: Usuario[] = [
 
-    {usuario: "Jfernandez" , nombre: 'Flor', apellido: "Fernandez", sexo: 'F'}
+ //   {usuario: "Jfernandez" , nombre: 'Flor', apellido: "Fernandez", sexo: 'F'}
   ];
-
-
+ 
   constructor() { }
+
+  private usuario!: Usuario;
+
 getUsuario(){
   return this.listUsuario.slice();
+}
+setUsuario(usuario:Usuario){
+  this.usuario= usuario;
 }
  eliminarUsuario(index: number ){
   this.listUsuario.splice(index, 1 );
