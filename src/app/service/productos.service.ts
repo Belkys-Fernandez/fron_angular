@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { producto } from '../interfaces/producto';
 import { Usuario } from '../interfaces/usuario';
 
@@ -20,16 +22,34 @@ export class ProductoService {
   ];
 
 
-  constructor() { }
+  constructor(private http:HttpClient) {
 
+   }
+   traerValor() {
+ 
+    return this.http.get('https://miproyecto-backend.herokuapp.com/Productos/listaProducto');
+  }
+  RegistrarProducto(nombre: string, categoria:string,  precio: number, presentacion:string) {
+    const body = { nombre, categoria, precio, presentacion};
+    return this.http.post('https://miproyecto-backend.herokuapp.com/Producto/registrarProducto', body);
+  }
+ 
+  eliminarProducto(index:Number) {
+    const body = { index};
+    return this.http.post('https://miproyecto-backend.herokuapp.com/Usuarios/buscarProducto', body);
+  }
+
+  
+  traerValoresPost(): Observable<any> {
+    //Post                      .toPromise()
+    return this.http.post('', {});
+  }
 
 getProducto(){
   return this.listproducto.slice();
 }
 
-eliminarProducto(index:number){
-  this.listproducto.splice(index ,1);
-}
+
 agreggarProducto(producto:producto){
   this.listproducto.unshift(producto);
 }
