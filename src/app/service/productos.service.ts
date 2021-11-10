@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { producto } from '../interfaces/producto';
-import { Usuario } from '../interfaces/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +19,15 @@ export class ProductoService {
     {nombre: 'Biocros', categoria: 'Energizante', precio: 1.079, presentacion: 'caja'},
   
   ];
+  Api: string;
 
+  constructor(private http:HttpClient ) { 
+    
+    this.Api = 'https://miproyecto-backend.herokuapp.com/';
+  }
+   private producto!:producto;
 
-  constructor(private http:HttpClient) {
-
-   }
+   
    traerValor() {
  
     return this.http.get('https://miproyecto-backend.herokuapp.com/Productos/listaProducto');
@@ -45,16 +48,21 @@ export class ProductoService {
     return this.http.post('', {});
   }
 
-getProducto(){
+  getProducto(){
   return this.listproducto.slice();
-}
+  }
+ 
+  setProducto(producto: producto){
+  this.producto=producto;
+  }
 
 
-agreggarProducto(producto:producto){
-  this.listproducto.unshift(producto);
+ 
+  agreggarProducto(producto:producto){
+    this.listproducto.unshift(producto);
+  }
 }
 
-}
 
 
 
