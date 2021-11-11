@@ -4,7 +4,7 @@ export interface producto{
     categoria:string,
     precio: number,
     presentacion:string,
-
+  
 
 
 

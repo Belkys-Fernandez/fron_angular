@@ -25,6 +25,7 @@ export class ProductoService {
     
     this.Api = 'https://miproyecto-backend.herokuapp.com/';
   }
+<<<<<<< HEAD
    private producto!:producto;
 
    
@@ -41,12 +42,26 @@ export class ProductoService {
     const body = {nombre};
     return this.http.post('https://miproyecto-backend.herokuapp.com/Usuarios/buscarProducto', body);
   }
+=======
+  private producto!:producto;
+
+  registrar(productos:producto): Observable<producto[]>{
+    return <Observable<producto[]>>(this.http.post( this.Api + 'listaProductos/crear',JSON.stringify(productos)));
+  }
+  
+  traerproductoss(id:number, token:string){
+    
+    return <Observable<producto[]>>(this.http.post( this.Api + 'productos/traerTodos/'+id,JSON.stringify({token:token})));
+  }
+  
+>>>>>>> f2e70590906da28b13baedf9c2066418f98368e4
 
   RegistrarUsuario(usuario: string, nombre: string, apellido: string, sexo:string ) {
     const body = { usuario,nombre,apellido,sexo};
     return this.http.post('https://miproyecto-backend.herokuapp.com/Usuarios/registrarUsuario', body);
   }
 
+<<<<<<< HEAD
   BuscarUsuario(correo: string, contraseña: string) {
     const body = {correo, contraseña};
     return this.http.post('https://miproyecto-backend.herokuapp.com/Usuarios/buscarUsuario', body);
@@ -57,6 +72,8 @@ export class ProductoService {
     return this.http.post('', {});
   }
 
+=======
+>>>>>>> f2e70590906da28b13baedf9c2066418f98368e4
   getProducto(){
   return this.listproducto.slice();
   }
@@ -64,6 +81,7 @@ export class ProductoService {
   setProducto(producto: producto){
   this.producto=producto;
   }
+<<<<<<< HEAD
 
 
  
@@ -71,8 +89,21 @@ export class ProductoService {
     this.listproducto.unshift(producto);
   }
   
+=======
 
+
+  eliminarProducto(index:number){
+    this.listproducto.splice(index ,1);
+  }
+  agreggarProducto(producto:producto){
+    this.listproducto.unshift(producto);
+  }
 }
+
+>>>>>>> f2e70590906da28b13baedf9c2066418f98368e4
+
+  
+
 
 
 

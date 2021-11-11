@@ -3,8 +3,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuario';
+<<<<<<< HEAD
 import { ApiService } from 'src/app/service/api.service';
 import { UsuarioService } from 'src/app/service/usuarios.service';
+=======
+import { ApiHelperService } from 'src/app/service/api-helper.service';
+import { UsuarioService } from 'src/app/service/usuarios-helper.service';
+
+>>>>>>> f2e70590906da28b13baedf9c2066418f98368e4
 
 
 @Component({
@@ -14,12 +20,28 @@ import { UsuarioService } from 'src/app/service/usuarios.service';
 })
 export class CrearUsuarioComponent implements OnInit {
  sexo:any[]=['Cliente Admirable', 'Empresario']
- 
+
+ public usuarioActual!:Usuario;
+ public usuarios!:Usuario[];
+ nuevo:boolean;
+
+
+ setearUsuario(usuarioSeleccionada:Usuario){
+  this.usuarioActual = usuarioSeleccionada;
+  } 
+
  form: FormGroup;
   api: any;
 
+<<<<<<< HEAD
   constructor(private fb:FormBuilder, private _usuarioService:UsuarioService, api:ApiService,
+=======
+  constructor(private fb:FormBuilder, private api:ApiHelperService , public user:UsuarioService,
+>>>>>>> f2e70590906da28b13baedf9c2066418f98368e4
      private router:Router, private _snackBar: MatSnackBar) {
+       this.nuevo=false;
+      //this.api.traerUsuarios(this.user.getUsuario().id , this.user.getUsuario().token).subscribe(then =>this.usuarios =then);
+      
 
     this.form= this.fb.group({
       usuario:['', Validators.required, Validators.minLength(8), Validators.maxLength(15)],
@@ -27,10 +49,12 @@ export class CrearUsuarioComponent implements OnInit {
       apellido:['', Validators.required, Validators.minLength(3)],
       sexo:['', Validators.required],
     })
-   }
+  }
+
 
   ngOnInit(): void {
   }
+<<<<<<< HEAD
   registrar(){
     alert('Creación de Usuario');
   }
@@ -57,6 +81,18 @@ export class CrearUsuarioComponent implements OnInit {
   
   
     
+=======
+  agregarNuevo(){
+    this.nuevo= true;
+  }
+
+  agregarUsuario(){
+
+   
+  
+    this.api.registrar(this.usuarioActual);
+    this.router.navigate([ './tablero/usuario'])
+>>>>>>> f2e70590906da28b13baedf9c2066418f98368e4
 
     this._snackBar.open('Usuario fue agregado con exito','',  {
       duration:3000,
@@ -67,3 +103,7 @@ export class CrearUsuarioComponent implements OnInit {
   }
 
 }
+function id(id: any) {
+  throw new Error('Function not implemented.');
+}
+
