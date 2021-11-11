@@ -8,17 +8,18 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   constructor(private http:HttpClient) {
-
    }
 
 
-  RegistrarUsuario(nombre: string, categoria:string,  precio: number, presentacion:string) {
-    const body = { nombre, categoria, precio, presentacion};
+
+
+  RegistrarUsuario(nombre: string, usuario:string,  passsword: number, ) {
+    const body = { nombre, usuario, passsword};
     return this.http.post('https://miproyecto-backend.herokuapp.com/Usuarios/registrarUsuario', body);
   }
 
-  BuscarUsuario(correo: string, contraseña: string) {
-    const body = {correo, contraseña};
+  BuscarUsuario(usuario: string, password: string) {
+    const body = {usuario, password};
     return this.http.post('https://miproyecto-backend.herokuapp.com/Usuarios/buscarUsuario', body);
   }
 

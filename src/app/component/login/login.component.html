@@ -6,21 +6,23 @@
             <img src="./assets/img/usuario.png " width="25%">
             <h1>Login</h1>
             <mat-form-field  class="ancho" appearance="fill">
-                <mat-label>usuario</mat-label>
-                <input matInput autocomplete="off"  formControlName="usuario">
+                <mat-label>usuario</mat-label >
+
+                <input    type="text" name="usuario" id="usuario" matInput autocomplete="off"  formControlName="usuario">
               </mat-form-field>
+
               <mat-form-field  class="ancho"  appearance="fill" >
                 <mat-label>Contraseña </mat-label>
-                <input  type="password"  matInput  autocomplete="off" formControlName="passwork" >
+                <input  type="password"  name="password" id="password" matInput  autocomplete="off" formControlName="passwork" >
               </mat-form-field>
               <br>
-              <button   type="submit" class="ancho button"  mat-raised-button color="primary" [disabled]="form.invalid" >Ingresar</button>
+              <button   type="submit" class="ancho button" name="botonLogin" id="botonLogin" mat-raised-button color="primary" [disabled]="form.invalid" >Ingresar</button>
               
 
               
               <br>
               <br>
-              <button   type="button" class="ancho button"  mat-raised-button color="primary"  >registrate</button>
+              <button   type="button"  (click)=registro() class="ancho button"  mat-raised-button color="primary"  >registrarse</button>
               
             
 

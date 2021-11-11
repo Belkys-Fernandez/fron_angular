@@ -41,7 +41,7 @@ this.form =this.fb.group({
 
     }
    
-    this._productoService.agreggarProducto(prod);
+    /*this._productoService.agregarProducto(prod);
     this.router.navigate(['/tablero/reportes'])
 
     this._snackBar.open('El producto fue agregado con exito','',  {
@@ -49,7 +49,8 @@ this.form =this.fb.group({
       horizontalPosition:'center',
       verticalPosition:'top'
 
-    })
+    })*/
+    
 
   }
 

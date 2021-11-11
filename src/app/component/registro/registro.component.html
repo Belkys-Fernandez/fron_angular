@@ -1,0 +1,41 @@
+<div class="body">
+    <div class="registro">
+     <mat-spinner  *ngIf= "!cargaSpinner" class="spiner" diameter ="50"></mat-spinner>
+
+        <form  *ngIf= "cargaSpinner" [formGroup]="form" (ngSubmit)="CrearUsuario()" > 
+                <img src="./assets/img/usuario.png " width="25%">
+                <h1>Registrate ya </h1>
+                   <mat-form-field  class="ancho" appearance="fill">
+                    <mat-label>Nombre</mat-label ><i [ngClass]="{'validado bi-x-circle-fill': form.get('nombre')?.hasError('required'), 'error bi bi-check-circle-fill iconos' : !form.get('nombre')?.hasError('required')}" id="iconoNombre"></i> 
+                    <input    type="text"  name="usuario" matInput autocomplete="off"  formControlName="nombre">
+                    </mat-form-field>
+                    
+                    <mat-form-field  class="ancho" appearance="fill">
+                    <mat-label>Usuario</mat-label ><i [ngClass]="{'validado bi-x-circle-fill': form.get('usuario')?.hasError('required'), 'error bi bi-check-circle-fill iconos' : !form.get('usuario')?.hasError('required')}"></i> 
+                    <input    type="text"  matInput autocomplete="off"  formControlName="usuario">
+                    </mat-form-field>
+
+                    <mat-form-field  class="ancho"  appearance="fill" >
+                    <mat-label>Contraseña </mat-label><i [ngClass]="{'validado bi-x-circle-fill': form.get('password')?.hasError('required'), 'error bi bi-check-circle-fill iconos' : !form.get('password')?.hasError('required')}" ></i> 
+                    <input  type="password"  name="password" id="password" matInput  autocomplete="off" formControlName="passwork" >
+                    </mat-form-field>
+                    <br>
+                    <button   type="submit"  name="publicar" id="publicar" class="ancho button" mat-raised-button color="primary" [disabled]="form.invalid" >Atras</button>
+                    
+
+             
+             <br>
+             <br>
+             <button   type="button"  (click)= atras() value="atras" class="ancho button"  mat-raised-button color="primary"  >registrarse</button>
+             
+           
+
+        </form>
+     
+    </div>
+ 
+
+</div>
+
+
+

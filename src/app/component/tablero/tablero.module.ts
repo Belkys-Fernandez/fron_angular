@@ -10,6 +10,9 @@ import { ReportesComponent } from './reportes/reportes.component';
 import { TableroComponent } from './tablero.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 import { CrearProductoComponent } from './reportes/crear-producto/crear-producto.component';
+import { OrdenPipe } from './reportes/orden.pipe';
+
+
 
 
 @NgModule({
@@ -18,7 +21,7 @@ import { CrearProductoComponent } from './reportes/crear-producto/crear-producto
    InicioComponent,
    MenuComponent,
     UsuarioComponent, 
-    ReportesComponent, CrearUsuarioComponent, CrearProductoComponent
+    ReportesComponent, CrearUsuarioComponent, CrearProductoComponent, OrdenPipe, 
   ],
   imports: [
     CommonModule,

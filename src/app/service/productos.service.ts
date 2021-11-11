@@ -29,7 +29,7 @@ export class ProductoService {
 
    
    traerValor() {
- 
+    
     return this.http.get('https://miproyecto-backend.herokuapp.com/Productos/listaProducto');
   }
   RegistrarProducto(nombre: string, categoria:string,  precio: number, presentacion:string) {
@@ -37,14 +37,23 @@ export class ProductoService {
     return this.http.post('https://miproyecto-backend.herokuapp.com/Producto/registrarProducto', body);
   }
  
-  eliminarProducto(index:Number) {
-    const body = { index};
+  eliminarProducto(nombre:string) {
+    const body = {nombre};
     return this.http.post('https://miproyecto-backend.herokuapp.com/Usuarios/buscarProducto', body);
   }
 
-  
+  RegistrarUsuario(usuario: string, nombre: string, apellido: string, sexo:string ) {
+    const body = { usuario,nombre,apellido,sexo};
+    return this.http.post('https://miproyecto-backend.herokuapp.com/Usuarios/registrarUsuario', body);
+  }
+
+  BuscarUsuario(correo: string, contraseña: string) {
+    const body = {correo, contraseña};
+    return this.http.post('https://miproyecto-backend.herokuapp.com/Usuarios/buscarUsuario', body);
+  }
+
   traerValoresPost(): Observable<any> {
-    //Post                      .toPromise()
+    //Post .toPromise()
     return this.http.post('', {});
   }
 
@@ -61,6 +70,8 @@ export class ProductoService {
   agreggarProducto(producto:producto){
     this.listproducto.unshift(producto);
   }
+  
+
 }
 
 

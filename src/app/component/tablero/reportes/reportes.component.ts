@@ -46,9 +46,9 @@ export class ReportesComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  eliminarProducto(index:number){
-    console.log(index);
-    this._productoService.eliminarProducto(index);
+  eliminarProducto(nombre:string){
+    console.log(nombre);
+    this._productoService.eliminarProducto(nombre);
     this.cargarproducto();
 
     this._snackBar.open('El producto fue ELIMINADO  con exito','',  {
